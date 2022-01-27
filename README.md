@@ -1,2 +1,2 @@
-# LNT_MidProject
+# LNT-Java_MidProject
  

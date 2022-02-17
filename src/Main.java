@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.Vector;
-import java.util.Collection;
 import java.util.Collections;
 
 public class Main 
@@ -93,7 +92,7 @@ public class Main
 			else actr++;
 		}
 		int exist=0;
-		if (mctr >= 3)
+		if (role.compareTo("Manager") == 0 && mctr % 3 == 0 && mctr != 0)
 		{
 			for (int i=0; i<karyawans.size(); i++)
 			{
@@ -111,7 +110,7 @@ public class Main
 				}
 			}
 		}
-		else if (sctr >= 3)
+		else if (role.compareTo("Supervisor") == 0 && sctr % 3 == 0 && sctr != 0)
 		{
 			exist=0;
 			for (int i=0; i<karyawans.size(); i++)
@@ -131,7 +130,7 @@ public class Main
 				}
 			}
 		}
-		else if (actr >= 3)
+		else if (role.compareTo("Admin") == 0 && actr % 3 == 0 && actr != 0)
 		{
 			exist=0;
 			for (int i=0; i<karyawans.size(); i++)
@@ -165,6 +164,7 @@ public class Main
 		id = sc.nextInt(); sc.nextLine();
 		if (id != 0 && karyawans.get(id-1) != null)
 		{
+			//input name
 			while(true)
 			{
 				System.out.println("Input nama karyawan [>= 3]: ");
@@ -176,6 +176,7 @@ public class Main
 				}
 				else if (name.compareTo("0") == 0) break;
 			}
+			//input gender
 			while(true)
 			{
 				System.out.println("Input jenis kelamin [Laki-laki | Perempuan] (Case Sensitive): ");
@@ -187,6 +188,7 @@ public class Main
 				}
 				else if (gender.compareTo("0") == 0) break;
 			}
+			//input role
 			while(true)
 			{
 				System.out.println("Input jabatan [Manager | Supervisor | Admin] (Case Sensitive): ");
